@@ -9,4 +9,5 @@ The following files are included:
 - printf.c: contains the main function
 - main.h: contains all function prototypes
 - get_mod-func.c: contains a funtion which maps the provided specifier with the appropriate function
-- write_function: writes the approciate output to stdout
+- write_function.c: writes the approciate output to stdout
+
