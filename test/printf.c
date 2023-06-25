@@ -13,6 +13,9 @@ int _printf(const char *format, ...)
 	int (*mod_ptr)(va_list);
 	va_list all_args;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(all_args, format);
 
 	while ((format != NULL) && (*format != '\0'))
