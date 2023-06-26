@@ -27,6 +27,7 @@ int _printf(const char *format, ...)
 			if (mod_ptr != NULL)
 			{
 				(*mod_ptr)(all_args);
+				/* code to check if write was successful before adding */
 				num_chars_written++;
 				format++;
 			}

@@ -16,11 +16,11 @@ int (*get_mod_func(char c))(va_list)
 		{'s', string_print},
 		{'\0', NULL}
 	};
-	int k;
+	size_t k;
 
 	/* iterate through all elements of the mods[] array of structs */
 	k = 0;
-	while (k < 4)
+	while (mods[k].specifier != '\0')
 	{
 		if (c == mods[k].specifier)
 			return (mods[k].func_ptr);
