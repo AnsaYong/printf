@@ -39,8 +39,5 @@ int main(void)
 	printf("Len:[%d] / len2: %d\n", len, len2);
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
-	len = _printf("%s\n");
-	len2 = printf("%s\n");
-	printf("len: %d / len2: %d\n", len, len2);
 	return (0);
 }
