@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(all_args, format);
 
 	while ((format != NULL) && (*format != '\0'))
@@ -28,13 +27,9 @@ int _printf(const char *format, ...)
 			{
 				write_check = (*mod_ptr)(all_args);
 				/* code to check if write was successful before adding */
-				if (next_char == 's' && write_check != -1)
-					num_chars_written += write_check;
-				else if ((next_char == 'd' && write_check != -1) ||
-						(next_char == 'i' && write_check != -1))
-						num_chars_written += write_check;
-				else if (write_check != -1)
-					num_chars_written++;
+				if (write_check == -1)
+					return (-1);
+				num_chars_written += write_check;
 				format++;
 			}
 		}
@@ -45,8 +40,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-
 	va_end(all_args);
-
 	return (num_chars_written);
 }
