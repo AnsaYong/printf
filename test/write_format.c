@@ -30,7 +30,7 @@ int char_print(va_list arg_list)
 	char c_arg = va_arg(arg_list, int);
 
 	/* check if char is within the printable ASCII range */
-	if (c_arg < 32 || c_arg >= 127)
+	if (c_arg < 32 && c_arg >= 127)
 		return (-1);
 
 	if (write(1, &c_arg, 1) == 1)
