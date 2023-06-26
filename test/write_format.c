@@ -30,7 +30,7 @@ int char_print(va_list arg_list)
 	char c_arg = va_arg(arg_list, int);
 
 	/* check if char is within the printable ASCII range */
-	if (c_arg < 32 || c_arg >= 127)
+	if (c_arg < 32 && c_arg >= 127)
 		return (-1);
 
 	if (write(1, &c_arg, 1) == 1)
@@ -76,7 +76,7 @@ int string_print(va_list arg_list)
 int int_print(va_list arg_list)
 {
 	int n_arg, size;
-	char buffer[12];	/* assuming a max of 12 digits for the int representation */
+	char buffer[1024];	/* assuming a max of 12 digits for the int representation */
 
 	n_arg = va_arg(arg_list, int);
 
