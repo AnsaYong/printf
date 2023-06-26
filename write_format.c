@@ -51,7 +51,7 @@ int string_print(va_list arg_list)
 	char *s_arg = va_arg(arg_list, char *);
 
 	if (s_arg == NULL)
-		return (-1);
+		s_arg = "(null)";
 
 	while (*s_arg != '\0')
 	{
