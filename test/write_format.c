@@ -9,9 +9,14 @@
 int percent_print(va_list arg_list)
 {
 	char perc;
+
 	(void)arg_list;
 	perc = '%';
-	return (write(1, &perc, 1));
+
+	if (write(1, &perc, 1) == 1)
+		return (1); /* write was successful */
+	else
+		return (-1); /* write failed */
 }
 
 /**
@@ -23,7 +28,11 @@ int percent_print(va_list arg_list)
 int char_print(va_list arg_list)
 {
 	char c_arg = va_arg(arg_list, int);
-	return (write(1, &c_arg, 1));
+
+	if (write(1, &c_arg, 1) == 1)
+		return (1);
+	else
+		return (-1);
 }
 
 /**
@@ -42,8 +51,13 @@ int string_print(va_list arg_list)
 
 	while (*s_arg != '\0')
 	{
-		len += write(1, s_arg, 1);
-		s_arg++;
+		if (write(1, s_arg, 1) == 1)
+		{
+			len++;
+			s_arg++;
+		}
+		else
+			return (-1);
 	}
 
 	return (len);

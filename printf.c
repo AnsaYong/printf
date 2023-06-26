@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int num_chars_written = 0;
+	int num_chars_written = 0, write_check;
 	char next_char;
 	int (*mod_ptr)(va_list);
 	va_list all_args;
@@ -26,16 +26,19 @@ int _printf(const char *format, ...)
 			mod_ptr = get_mod_func(next_char);
 			if (mod_ptr != NULL)
 			{
-				(*mod_ptr)(all_args);
+				write_check = (*mod_ptr)(all_args);
 				/* code to check if write was successful before adding */
-				num_chars_written++;
+				if (next_char == 's' && write_check != -1)
+					num_chars_written += write_check;
+				else if (write_check != -1)
+					num_chars_written++;
 				format++;
 			}
 		}
 		else
 		{
-			write(1, format, 1);	/* already takes care of \<chars> */
-			num_chars_written++;
+			if (write(1, format, 1) == 1)	/* already takes care of \<chars> */
+				num_chars_written++;
 		}
 		format++;
 	}
