@@ -50,7 +50,7 @@ int string_print(va_list arg_list)
 	int len = 0;
 	char *s_arg = va_arg(arg_list, char *);
 
-	if (s_arg == NULL || *s_arg == '\0')
+	if (s_arg == NULL)
 		return (-1);
 
 	while (*s_arg != '\0')
