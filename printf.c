@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 		format++;
 	}
 
-	va_end(arg_list);
+	va_end(all_args);
 
 	return (num_chars_written);
 }
