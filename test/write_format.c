@@ -76,13 +76,18 @@ int string_print(va_list arg_list)
 int int_print(va_list arg_list)
 {
 	int n_arg, size;
-	char buffer[1024];	/* assuming a max of 12 digits for the int representation */
+	char buffer[32];	/* assuming a max of 31 digits for the int representation */
 
 	n_arg = va_arg(arg_list, int);
 
 	/* convert the int to a string using a helper function */
 	size = int_to_string(n_arg, buffer);
 
+	/* write the int to stdout */
+	if (write(1, buffer, size) != size)
+		/* write failed, return -1 to indicate an error */
+		return (-1);
+
 	/* write int to stdout */
-	return (write(1, buffer, size));
+	return (size);
 }
