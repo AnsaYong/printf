@@ -8,6 +8,11 @@ int main(void)
 	int len2;
 	unsigned int ui;
 	void *addr;
+	int max;
+	int min;
+
+	max = INT_MAX;
+	min = INT_MIN;
 
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
@@ -15,7 +20,8 @@ int main(void)
 	addr = (void *)0x7ffe637541f0;
 	len = _printf("Length:[%d, %i]\n", len, len2);
 	len2 = printf("Length:[%d, %i]\n", len, len2);
-	printf("len: %d / len2: %d\n", len, len2);
+	_printf("len: %d / len2: %d\n", max-1, min-1);
+	printf("len: %d / len2: %d\n", max-1, min-1);
 	_printf("Negative:[%d]\n", -762534);
 	printf("Negative:[%d]\n", -762534);
 	_printf("large numb:[%d]\n", 6234762534);
