@@ -23,5 +23,7 @@ int (*get_mod_func(char c))(va_list);
 int percent_print(va_list arg_list);
 int char_print(va_list arg_list);
 int string_print(va_list arg_list);
+int int_print(va_list arg_list);
+int int_to_string(int number, char *buffer);
 
 #endif /* MAIN_H */

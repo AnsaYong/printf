@@ -14,6 +14,8 @@ int (*get_mod_func(char c))(va_list)
 		{'%', percent_print},
 		{'c', char_print},
 		{'s', string_print},
+		{'d', int_print},
+		{'i', int_print},
 		{'\0', NULL}
 	};
 	size_t k;
@@ -25,6 +27,7 @@ int (*get_mod_func(char c))(va_list)
 		if (c == mods[k].specifier)
 			return (mods[k].func_ptr);
 		k++;
-	}
+	};
+
 	return (NULL);
 }

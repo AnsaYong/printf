@@ -30,7 +30,7 @@ int char_print(va_list arg_list)
 	char c_arg = va_arg(arg_list, int);
 
 	/* check if char is within the printable ASCII range */
-	if (c_arg < 32 && c_arg >= 127)
+	if (c_arg < 32 || c_arg >= 127)
 		return (-1);
 
 	if (write(1, &c_arg, 1) == 1)
@@ -65,4 +65,24 @@ int string_print(va_list arg_list)
 	}
 
 	return (len);
+}
+
+/**
+ * int_print - writes integer to stdout
+ * @arg_list: list of arguments provided
+ *
+ * Return: number of bytes written or -1
+ */
+int int_print(va_list arg_list)
+{
+	int n_arg, size;
+	char buffer[12];	/* assuming a max of 12 digits for the int representation */
+
+	n_arg = va_arg(arg_list, int);
+
+	/* convert the int to a string using a helper function */
+	size = int_to_string(n_arg, buffer);
+
+	/* write int to stdout */
+	return (write(1, buffer, size));
 }
