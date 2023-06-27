@@ -26,5 +26,6 @@ int string_print(va_list arg_list);
 int int_print(va_list arg_list);
 int int_to_string(int number, char *buffer);
 char *_strcpy(char *dest, char *src);
+int binary_print(va_list arg_list);
 
 #endif /* MAIN_H */

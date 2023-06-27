@@ -16,6 +16,7 @@ int (*get_mod_func(char c))(va_list)
 		{'s', string_print},
 		{'d', int_print},
 		{'i', int_print},
+		{'b', binary_print},
 		{'\0', NULL}
 	};
 	size_t k;
