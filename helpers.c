@@ -9,7 +9,7 @@
 int int_to_string(int number, char *buffer)
 {
 	char temp;
-	int is_neg = 0, numb_digits = 0, start, end;
+	int is_neg = 0, numb_digits = 0, start 0, end = numb_digits - 1;
 
 	if (number == 0)
 	{
@@ -38,8 +38,6 @@ int int_to_string(int number, char *buffer)
 			buffer[numb_digits++] = '-';
 		buffer[numb_digits] = '\0';
 		/* reverse the string */
-		start = 0;
-		end = numb_digits - 1;
 		while (start < end)
 		{
 			temp = buffer[start];
