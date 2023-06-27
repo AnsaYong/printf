@@ -8,12 +8,12 @@
  */
 int percent_print(va_list arg_list)
 {
-	/* char perc;*/
+	char perc;
 
 	(void)arg_list;
-	/* perc = '%';*/
+	perc = '%';
 
-	if (write(1, "%%", 1) == 1)
+	if (write(1, &perc, 1) == 1)
 		return (1); /* write was successful */
 	else
 		return (-1); /* write failed */
