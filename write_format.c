@@ -53,7 +53,7 @@ int string_print(va_list arg_list)
 	if (s_arg == NULL)
 		s_arg = "(null)";
 
-	while (*s_arg != '\0')
+	while (*s_arg != '\0' && *s_arg < 32 && *s_arg > 126)
 	{
 		if (write(1, s_arg, 1) == 1)
 		{
