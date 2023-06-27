@@ -171,3 +171,43 @@ int write_uX(va_list arg_list)
 	}
 	return (len);
 }
+
+/**
+ * write_S - writes string with non-printable character to stdout
+ * @arg_list: list of arguments provided
+ *
+ * Return: number of bytes written or -1
+ */
+int write_S(va_list arg_list)
+{
+	int len = 0;
+	char *s_arg = va_arg(arg_list, char *);
+	char array[4];
+	char hex_code[] = "0123456789ABCDEF";
+
+	if (s_arg == NULL)
+		s_arg = "(null)";
+
+	while (*s_arg != '\0')
+	{
+		if (*s_arg < 32 || *s_arg > 126)
+		{
+			array[0] = '\\';
+			array[1] = 'x';
+			array[2] = hex_code[*s_arg / 16];
+			array[3] = hex_code[*s_arg % 16];
+
+			len += write(1, array, 4);
+		}
+		else if (write(1, s_arg, 1) == 1)
+		{
+			len++;
+		}
+		else
+			return (-1);
+		s_arg++;
+
+	}
+	
+	return (len);
+}

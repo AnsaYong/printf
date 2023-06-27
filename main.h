@@ -31,5 +31,6 @@ int write_ud(va_list arg_list);
 int write_uo(va_list arg_list);
 int write_ux(va_list arg_list);
 int write_uX(va_list arg_list);
+int write_S(va_list arg_list);
 
 #endif /* MAIN_H */

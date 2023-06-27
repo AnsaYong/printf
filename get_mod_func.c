@@ -21,6 +21,7 @@ int (*get_mod_func(char c))(va_list)
 		{'o', write_uo},
 		{'x', write_ux},
 		{'X', write_uX},
+		{'S', write_S},
 		{'\0', NULL}
 	};
 	size_t k;
