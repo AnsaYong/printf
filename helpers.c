@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * int_to_string - converts an integer to a string
- * @number: the integer to be converted to string
- * @buffer: array to store the string representation
- * Return: size of the converted string
+ * int_to_string - converts an integer to a string.
+ * @number: the integer to be converted to string.
+ * @buffer: array to store the string representation.
+ * Return: size of the converted string.
  */
 int int_to_string(int number, char *buffer)
 {
@@ -53,11 +53,11 @@ int int_to_string(int number, char *buffer)
 }
 
 /**
- * _strcpy - copies the string pointed to by src
- * @dest: new array to fill
- * @src: array whose elements we are copying
+ * _strcpy - copies the string pointed to by src.
+ * @dest: new array to fill.
+ * @src: array whose elements we are copying.
  *
- * Return: pointer to new array
+ * Return: pointer to new array.
  */
 char *_strcpy(char *dest, char *src)
 {
