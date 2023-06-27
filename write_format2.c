@@ -8,12 +8,12 @@
  */
 int write_ud(va_list arg_list)
 {
-	unsigned long int ud_arg;
+	unsigned int ud_arg;
 	int	len = 0;
 	char buffer[1024];
 	int i = 0, j;
 
-	ud_arg = va_arg(arg_list, unsigned long int);
+	ud_arg = va_arg(arg_list, unsigned int);
 
 	if (ud_arg == 0)
 	{
@@ -139,7 +139,7 @@ int write_ux(va_list arg_list)
 int write_uX(va_list arg_list)
 {
 	unsigned int uh_upper;
-	int len;
+	int len = 0;
 	char buffer[1024];
 	int i = 0, j, rem;
 
