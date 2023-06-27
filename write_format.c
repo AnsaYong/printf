@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * percent_print - writes % to stdout
- * @arg_list: list of arguments provided
+ * percent_print - writes % to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: numb of bytes written or -1
+ * Return: numb of bytes written or -1.
  */
 int percent_print(va_list arg_list)
 {
@@ -20,10 +20,10 @@ int percent_print(va_list arg_list)
 }
 
 /**
- * char_print - writes char to stdout
- * @arg_list: list of arguments provided
+ * char_print - writes char to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: numb of bytes written or -1
+ * Return: numb of bytes written or -1.
  */
 int char_print(va_list arg_list)
 {
@@ -40,10 +40,10 @@ int char_print(va_list arg_list)
 }
 
 /**
- * string_print - writes string to stdout
- * @arg_list: list of arguments provided
+ * string_print - writes string to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: number of bytes written or -1
+ * Return: number of bytes written or -1.
  */
 int string_print(va_list arg_list)
 {
@@ -70,10 +70,10 @@ int string_print(va_list arg_list)
 }
 
 /**
- * int_print - writes integer to stdout
- * @arg_list: list of arguments provided
+ * int_print - writes integer to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: number of bytes written or -1
+ * Return: number of bytes written or -1.
  */
 int int_print(va_list arg_list)
 {
@@ -98,10 +98,10 @@ int int_print(va_list arg_list)
 }
 
 /**
- * binary_print - handles the binary conversion of an unsigned int
- * @arg_list: list of arguments / variable
+ * binary_print - handles the binary conversion of an unsigned int.
+ * @arg_list: list of arguments / variable.
  *
- * Return: number of bytes written or -1
+ * Return: number of bytes written or -1.
  */
 int binary_print(va_list arg_list)
 {
