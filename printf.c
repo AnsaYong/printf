@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _printf - Prints the format string replacing the conversion speficiers
- * @format: string
+ * _printf - Prints the format string replacing the conversion speficiers.
+ * @format: string.
  *
- * Return: integer, number of bytes written
+ * Return: integer, number of bytes written.
  */
 int _printf(const char *format, ...)
 {
