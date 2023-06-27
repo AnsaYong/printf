@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * write_ud - converts unsigned int to unsigned decimal and writes to stdout
- * @arg_list: list of arguments provided
+ * write_ud - converts unsigned int to unsigned decimal and writes to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: numb of bytes written or -1
+ * Return: numb of bytes written or -1.
  */
+
 int write_ud(va_list arg_list)
 {
 	unsigned int ud_arg;
@@ -45,10 +46,10 @@ int write_ud(va_list arg_list)
 }
 
 /**
- * write_uo - converts unsigned int to unsigned octal and writes it to screen
- * @arg_list: list of arguments passed
+ * write_uo - converts unsigned int to unsigned octal and writes it to screen.
+ * @arg_list: list of arguments passed.
  *
- * Return: number of written chars or -1
+ * Return: number of written chars or -1.
  */
 int write_uo(va_list arg_list)
 {
@@ -86,10 +87,10 @@ int write_uo(va_list arg_list)
 }
 
 /**
- * write_ux - converts unsigned int to lower hex and writes it to stdout
- * @arg_list: list of arguments provided
+ * write_ux - converts unsigned int to lower hex and writes it to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: number of chars written or -1
+ * Return: number of chars written or -1.
  */
 int write_ux(va_list arg_list)
 {
@@ -131,10 +132,10 @@ int write_ux(va_list arg_list)
 }
 
 /**
- * write_uX - cpnverts unsigned int to upper hex and writes to stdout
- * @arg_list: list of arguments provided
+ * write_uX - cpnverts unsigned int to upper hex and writes to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: number of written chars or -1
+ * Return: number of written chars or -1.
  */
 int write_uX(va_list arg_list)
 {
@@ -173,10 +174,10 @@ int write_uX(va_list arg_list)
 }
 
 /**
- * write_S - writes string with non-printable character to stdout
- * @arg_list: list of arguments provided
+ * write_S - writes string with non-printable character to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: number of bytes written or -1
+ * Return: number of bytes written or -1.
  */
 int write_S(va_list arg_list)
 {
