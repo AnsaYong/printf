@@ -10,7 +10,7 @@ int write_ud(va_list arg_list)
 {
 	unsigned int ud_arg;
 	int	len = 0;
-	char buffer[1024];
+	char buffer[SIZE];
 	int i = 0, j;
 
 	ud_arg = va_arg(arg_list, unsigned int);
@@ -54,7 +54,7 @@ int write_uo(va_list arg_list)
 {
 	unsigned int uo_arg;
 	int len = 0;
-	char buffer[1024];
+	char buffer[SIZE];
 	int i = 0, j;
 
 	uo_arg = va_arg(arg_list, unsigned int);
@@ -95,7 +95,7 @@ int write_ux(va_list arg_list)
 {
 	unsigned int uh_lower;
 	int len = 0;
-	char buffer[1024];
+	char buffer[SIZE];
 	int i = 0, j, rem;
 
 	uh_lower = va_arg(arg_list, unsigned int);
@@ -140,7 +140,7 @@ int write_uX(va_list arg_list)
 {
 	unsigned int uh_upper;
 	int len = 0;
-	char buffer[1024];
+	char buffer[SIZE];
 	int i = 0, j, rem;
 
 	uh_upper = va_arg(arg_list, unsigned int);
