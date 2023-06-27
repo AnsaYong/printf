@@ -78,7 +78,7 @@ int string_print(va_list arg_list)
 int int_print(va_list arg_list)
 {
 	int n_arg, size;
-	char buffer[1024];	/* assuming a max of 31 digits for int */
+	char buffer[SIZE];	/* assuming a max of 31 digits for int */
 
 	n_arg = va_arg(arg_list, int);
 
@@ -107,7 +107,7 @@ int binary_print(va_list arg_list)
 {
 	unsigned int b_arg;
 	int len = 0; /* to store number of written elements */
-	char buffer[1024]; /* buffer to store bin bits (32 bits for unsigned int) */
+	char buffer[SIZE]; /* buffer to store bin bits (32 bits for unsigned int) */
 	int k = 0, l;
 
 	b_arg = va_arg(arg_list, unsigned int);
