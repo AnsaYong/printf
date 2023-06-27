@@ -94,3 +94,49 @@ int int_print(va_list arg_list)
 	/* write int to stdout */
 	return (size);
 }
+
+/**
+ * binary_print - handles the binary conversion of an unsigned int
+ * @arg_list: list of arguments / variable
+ *
+ * Return: number of bytes written or -1
+ */
+int binary_print(va_list arg_list)
+{
+	unsigned int b_arg;
+	int len = 0; /* to store number of written elements */
+	char buffer[1024]; /* buffer to store bin bits (32 bits for unsigned int) */
+	int k = 0, l;
+
+	b_arg = va_arg(arg_list, unsigned int);
+
+	if (b_arg == 0)
+	{
+		if (write(1, "0", 1) == 1)
+			return (1);
+		else
+			return (-1);
+	}
+
+	/* if (b_arg < 0) return (-1); */
+
+	/* convert number to binary by coninuously dividing by 2 */
+	while (b_arg > 0)
+	{
+		buffer[k++] = '0' + (b_arg % 2);
+		b_arg /= 2;
+	}
+
+	/* write the binary representation in reverse order */
+	l = k - 1;
+	while (l >= 0)
+	{
+		if (write(1, &buffer[l], 1) == 1)
+			len++;
+		else
+			return (-1);
+		l--;
+	}
+
+	return (len);
+}
