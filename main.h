@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+#define SIZE 1024
 
 /**
  * struct mod - Struct mod
