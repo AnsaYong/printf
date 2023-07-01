@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * percent_print - writes % to stdout
- * @arg_list: list of arguments provided
+ * percent_print - writes % to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: numb of bytes written or -1
+ * Return: numb of bytes written or -1.
  */
 int percent_print(va_list arg_list)
 {
@@ -20,17 +20,17 @@ int percent_print(va_list arg_list)
 }
 
 /**
- * char_print - writes char to stdout
- * @arg_list: list of arguments provided
+ * char_print - writes char to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: numb of bytes written or -1
+ * Return: numb of bytes written or -1.
  */
 int char_print(va_list arg_list)
 {
 	char c_arg = va_arg(arg_list, int);
 
 	/* check if char is within the printable ASCII range */
-	if (c_arg < 32 && c_arg >= 127)
+	if (c_arg < 32 && c_arg > 126)
 		return (-1);
 
 	if (write(1, &c_arg, 1) == 1)
@@ -40,10 +40,10 @@ int char_print(va_list arg_list)
 }
 
 /**
- * string_print - writes string to stdout
- * @arg_list: list of arguments provided
+ * string_print - writes string to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: number of bytes written or -1
+ * Return: number of bytes written or -1.
  */
 int string_print(va_list arg_list)
 {
@@ -55,7 +55,9 @@ int string_print(va_list arg_list)
 
 	while (*s_arg != '\0')
 	{
-		if (write(1, s_arg, 1) == 1)
+		if (*s_arg < 32 && *s_arg > 126)
+			return (-1);
+		else if (write(1, s_arg, 1) == 1)
 		{
 			len++;
 			s_arg++;
@@ -68,15 +70,15 @@ int string_print(va_list arg_list)
 }
 
 /**
- * int_print - writes integer to stdout
- * @arg_list: list of arguments provided
+ * int_print - writes integer to stdout.
+ * @arg_list: list of arguments provided.
  *
- * Return: number of bytes written or -1
+ * Return: number of bytes written or -1.
  */
 int int_print(va_list arg_list)
 {
 	int n_arg, size;
-	char buffer[1024];	/* assuming a max of 31 digits for int */
+	char buffer[SIZE];	/* assuming a max of 31 digits for int */
 
 	n_arg = va_arg(arg_list, int);
 
@@ -96,16 +98,16 @@ int int_print(va_list arg_list)
 }
 
 /**
- * binary_print - handles the binary conversion of an unsigned int
- * @arg_list: list of arguments / variable
+ * binary_print - handles the binary conversion of an unsigned int.
+ * @arg_list: list of arguments / variable.
  *
- * Return: number of bytes written or -1
+ * Return: number of bytes written or -1.
  */
 int binary_print(va_list arg_list)
 {
 	unsigned int b_arg;
 	int len = 0; /* to store number of written elements */
-	char buffer[1024]; /* buffer to store bin bits (32 bits for unsigned int) */
+	char buffer[SIZE]; /* buffer to store bin bits (32 bits for unsigned int) */
 	int k = 0, l;
 
 	b_arg = va_arg(arg_list, unsigned int);

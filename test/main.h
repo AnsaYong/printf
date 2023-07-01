@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+#define SIZE 1024
 
 /**
  * struct mod - Struct mod
@@ -31,5 +32,7 @@ int write_ud(va_list arg_list);
 int write_uo(va_list arg_list);
 int write_ux(va_list arg_list);
 int write_uX(va_list arg_list);
+int write_S(va_list arg_list);
+int write_ptr(va_list arg_list);
 
 #endif /* MAIN_H */
